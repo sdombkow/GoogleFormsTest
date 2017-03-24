@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<?!= HtmlService.createHtmlOutputFromFile('Stylesheet').getContent(); ?>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>@name's Portfolio Link </title>
+    <link rel="alternate" type="application/atom+xml" href="@root_path/?/feed/">
+    <link rel="stylesheet" href="@root_path/public/docs/css/screen.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="col three">
+        <a href="@root_path">@name</a>
+        <strong>@profession</strong>
+      </h1>
+      <em class="col three">@email</em>
+      <hr>
+      :navigation
+      <div id="content" class="col eight">
+        :category-lists
+      </div>
+      <hr>
+      <p>Here Here Here Here</p>
+      <button id="authorize-button" onclick="initClient()">Authorize</button>
+      <button id="signout-button">Sign Out</button>
+  	  <form>
+  		  Name: <input type="text" name="Name" id="name"><br>
+  		  Number: <input type="text" name="Number" id="number"><br>
+  		  <input type="submit" id="submit-button" value="Submit">
+  		  <button id="clear-button">Clear</button>
+	  </form>
+	  <pre id="content"></pre>
+      <p id="footer" class="col six">&copy; Copyright here here @name @current_year <a class="atom-rss" href="@root_path/?/feed/">RSS</a><br>
+        <em>Content managed by <a href="http://www.staceyapp.com">stacey</a></em></p>
+    </div>
+    <h1 id="main-heading">Loading...</h1>
+    <div id="dashboard-div">
+      <div id="control-div">
+        <div id="slider-div">
+        </div>
+        <div id="selector-div">
+        </div>
+      </div>
+      <div id="charts-div">
+        <div id="piechart-div">
+        </div>
+        <div id="table-div">
+        </div>
+      </div>
+    </div>
+    <div class="hidden" id="error-message">
+    </div>
+  </body>
+  
+  <script src="@root_path/public/docs/js/googlesheettest.js" type="text/javascript" charset="utf-8"></script>
+  <script src="@root_path/public/docs/js/gallery.js" type="text/javascript" charset="utf-8"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
+  
+</html>
+
+<?!= HtmlService.createHtmlOutputFromFile('JavaScript').getContent(); ?>
